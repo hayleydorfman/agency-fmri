@@ -10,11 +10,44 @@ subj_original_indices = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,21,22,23,
 % assumes runs are always in order: 1,2,3,4,...
 nRuns = {}; % runs per subject [We don't need this]
 
-%goodSubjects = [1:4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 16, 17, 18:21, 23:26, 28:30, 32:38]; %this is SPM index! this is all subjects for the study
 
-goodSubjects = [1:4, 5, 6, 8, 9, 10, 11, 13, 15, 16, 17, 18:21, 23:26, 28:30, 32:37]; %this is SPM index! this is excluding subj 8, who is missing trials
+%goodSubjects = [1:4, 5, 6, 8, 9, 10, 11, 13, 15, 16, 17, 18:21, 23:26, 28:30, 32:37]; %this is SPM index!
+% this version is excluding the following subjs (in original indices): 8, 13,15,24,29,33,40
+% this version was used for initial imaging analyses. It excludes subjs for
+% missing trials, missing runs, bad img data quality, and modeling issues
+% (i.e., psi parameter always 1 because they only chose one option for
+% every trial)
+% S1
 
-%goodSubjects = [5, 7, 9, 17, 26, 36, 37, 38]; %this is SPM index!
+%goodSubjects = [1, 2, 4, 5, 6, 8, 9, 10, 11, 13, 15, 16, 18, 20, 21, 23, 26, 28:30, 32:36]; %this is SPM index!
+% this version is excluding the following subjs (in original indices): 4, 8, 13,15,18,21,24,25,26,29,33,39,40
+% this version was used for imaging analyses with subjs who also met
+% behavioral accuracy criteria - MOST GLMS for final paper will be this
+% subset
+%n=25
+% S2
+
+goodSubjects = [1, 2, 4, 5, 6, 8, 9, 10, 11, 13, 15, 16, 18, 20, 21, 23, 26, 28:30, 32:34]; %this is SPM index!
+% this version is excluding the following subjs (in original indices): 4,
+% 8, 13,15,18,21,24,25,26,29,33,39,40, 37, 38
+% this version was used for imaging analyses with subjs who also met
+% behavioral accuracy criteria - USE FOR GLM 16 (or any GLM where you look
+% at agency beliefs) - 2 subjs in the subset above NEVER said that the
+% latent agent caused wins
+% n = 23
+%S3
+
+%goodSubjects = [1, 2, 4, 5, 6, 8, 9, 10, 11, 13, 15, 16, 18, 20, 21, 23, 26, 28, 30, 32:35]; %this is SPM index!
+% this version was used for GLM 17; assertions failed for 2 additional
+% subjs, so this is a new subset of 23 subjs
+%S4
+
+%goodSubjects = [1, 2, 4, 5, 6, 8, 9, 10, 11, 13, 15, 16, 18, 21, 23, 26, 28:30, 32:36]; %this is SPM index!
+% this version was used for GLM 17; assertions failed for 2 additional
+% subjs, so this is a new subset of 23 subjs
+%S5
+
+
 
 
 % which runs to include/exclude for each subject (for everyone! - don't
